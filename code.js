@@ -58,7 +58,7 @@ const approveDesapprove = (prc, cla, exam) => {
         case 9: msgExamScore = "Congratulations! Well Done!";
         case 10: msgExamScore = "You're the best, could you put your autograph in my t-shirt?";
     }
-    let avgScore = (prcScore + classScore + examScore)/3;
+    let avgScore = Math.round((prcScore + classScore + examScore)/3);
 
     if (avgScore < 7){
         msgSubjectScore = "DESAPPROVED";
