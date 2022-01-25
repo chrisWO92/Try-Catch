@@ -47,16 +47,16 @@ const approveDesapprove = (prc, cla, exam) => {
 
 
     switch(examScore) {
-        case 1: msgExamScore = "What are you doing with your live?";
-        case 2: msgExamScore = "You suck man!";
-        case 3: msgExamScore = "Don't try this again please";
-        case 4: msgExamScore = "You failed the exam";
-        case 5: msgExamScore = "Well, pretty mediocre";
-        case 6: msgExamScore = "Yo need to study a bit more";
-        case 7: msgExamScore = "Well, but it could be better";
-        case 8: msgExamScore = "Great, you passed the exam";
-        case 9: msgExamScore = "Congratulations! Well Done!";
-        case 10: msgExamScore = "You're the best, could you put your autograph in my t-shirt?";
+        case 1: {msgExamScore = "What are you doing with your live?"; break;}
+        case 2: {msgExamScore = "You suck man!"; break;}
+        case 3: {msgExamScore = "Don't try this again please"; break;}
+        case 4: {msgExamScore = "You failed the exam"; break;}
+        case 5: {msgExamScore = "Well, pretty mediocre"; break;}
+        case 6: {msgExamScore = "Yo need to study a bit more"; break;}
+        case 7: {msgExamScore = "Well, but it could be better"; break;}
+        case 8: {msgExamScore = "Great, you passed the exam"; break;}
+        case 9: {msgExamScore = "Congratulations! Well Done!"; break;}
+        case 10: {msgExamScore = "You're the best, could you put your autograph in my t-shirt?"; break;}
     }
     let avgScore = Math.round((prcScore + classScore + examScore)/3);
 
@@ -67,6 +67,7 @@ const approveDesapprove = (prc, cla, exam) => {
         msgSubjectScore = "APPROVED";
     }
 
+    console.log(examScore);
     console.log(avgScore);
     console.log(msgExamScore);
     console.log(msgSubjectScore);
