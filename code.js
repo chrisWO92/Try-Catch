@@ -8,6 +8,8 @@ const score = document.querySelector(".score");
 const btnScore = document.querySelector(".btn-score");
 
 
+// Listener that gets executed when clicking on the "Send Score" buttoon
+
 btnScore.addEventListener("click", () => {
     
     let result, msg;
@@ -24,7 +26,7 @@ btnScore.addEventListener("click", () => {
         else {
             msg = "Correct data";
         }
-        approveDesapprove(8, 4, result);
+        approveDesapprove(8, 7, result);
     }
     catch(error) {
         msg = error;
@@ -33,9 +35,16 @@ btnScore.addEventListener("click", () => {
     showResultMsg(result, msg);
 });
 
-const approveDesapprove = (prcScore, classScore, examScore) => {
+
+// Function that evaluates if ths student has passed the course and gives some feedback about the final exam
+
+const approveDesapprove = (prc, cla, exam) => {
 
     let msgExamScore, msgSubjectScore;
+    let prcScore = parseInt(prc);
+    let classScore = parseInt(cla);
+    let examScore = parseInt(exam);
+
 
     switch(examScore) {
         case 1: msgExamScore = "What are you doing with your live?";
@@ -58,8 +67,13 @@ const approveDesapprove = (prcScore, classScore, examScore) => {
         msgSubjectScore = "APPROVED";
     }
 
-    return [avgScore, msgExamScore, msgSubjectScore];
+    console.log(avgScore);
+    console.log(msgExamScore);
+    console.log(msgSubjectScore);
 } 
+
+
+// Function which helps the listener to show on console the result of the final exam, and a message that tells the user if the introduced data it's ok or not
 
 const showResultMsg = (res, mess) => {
     console.log(res);
