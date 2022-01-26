@@ -1,6 +1,7 @@
 
 body {
     box-sizing: border-box;
+    height: 100vh;
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -11,6 +12,7 @@ body {
     
     padding: 5px;
     width: 100%;
+    height: 65px;
     margin-top: 10%;
     font-family: sans-serif;
     display: flex;
@@ -54,4 +56,43 @@ body {
 
 .title-form {
     margin-right: 10px;
+}
+
+.msg-container {
+    background-color: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg-square {
+    background-color: white;
+    height: 120px;
+    width: auto;
+    padding-left: 3em;
+    padding-right: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.msg-square > * {
+    margin: 0px;
+}
+
+.msg-subj-score {
+    margin-bottom: 20px;
+    font-size: 1.7em;
+}
+
+.msg-exam-score {
+    font-size: 1.0em;
 }

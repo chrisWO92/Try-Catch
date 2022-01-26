@@ -6,6 +6,11 @@ const scoreForm = document.querySelector(".score-form");
 const titleForm = document.querySelector(".title-form");
 const score = document.querySelector(".score");
 const btnScore = document.querySelector(".btn-score");
+const msgContainer = document.querySelector(".msg-container");
+const msgSquare = document.querySelector(".msg-square");
+const msgExScore = document.querySelector(".msg-exam-score");
+const msgSubScore = document.querySelector(".msg-subj-score");
+
 
 
 // Listener that gets executed when clicking on the "Send Score" buttoon
@@ -32,7 +37,7 @@ btnScore.addEventListener("click", () => {
         msg = error;
     }
 
-    showResultMsg(result, msg);
+    /* showResultMsg(result, msg); */
 });
 
 
@@ -62,21 +67,23 @@ const approveDesapprove = (prc, cla, exam) => {
 
     if (avgScore < 7){
         msgSubjectScore = "DESAPPROVED";
+        msgSubScore.style.color = "red";
     }
     else {
         msgSubjectScore = "APPROVED";
+        msgSubScore.style.color = "green";
     }
 
-    console.log(examScore);
-    console.log(avgScore);
-    console.log(msgExamScore);
-    console.log(msgSubjectScore);
+    msgSubScore.innerHTML = msgSubjectScore;
+    msgExScore.innerHTML = "<b>Final Exam Feedback:</b> " + msgExamScore;
+    msgContainer.style.display = "flex";
+
 } 
 
 
 // Function which helps the listener to show on console the result of the final exam, and a message that tells the user if the introduced data it's ok or not
 
-const showResultMsg = (res, mess) => {
+/* const showResultMsg = (res, mess) => {
     console.log(res);
     console.log(mess);
-};
+}; */
