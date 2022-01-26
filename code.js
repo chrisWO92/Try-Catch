@@ -23,21 +23,20 @@ btnScore.addEventListener("click", () => {
         result = score.value;
         
         if (isNaN(result)) {
-            throw "ERROR";
+            throw "Syntax Error";
         }
-        else if (parseInt(result) < 1 || parseInt(result) > 10) {
+        if (parseInt(result) < 1 || parseInt(result) > 10) {
             throw "Score must be a number between 1 and 10";
         }
-        else {
-            msg = "Correct data";
-        }
+
         approveDesapprove(8, 7, result);
     }
     catch(error) {
         msg = error;
+        showResultMsg(msg);
     }
 
-    /* showResultMsg(result, msg); */
+    
 });
 
 
@@ -83,7 +82,6 @@ const approveDesapprove = (prc, cla, exam) => {
 
 // Function which helps the listener to show on console the result of the final exam, and a message that tells the user if the introduced data it's ok or not
 
-/* const showResultMsg = (res, mess) => {
-    console.log(res);
-    console.log(mess);
-}; */
+const showResultMsg = (mess) => {
+    alert(mess + ", try again!");
+};
